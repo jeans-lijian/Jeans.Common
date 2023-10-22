@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jeans.Common.WPFApp", "Jeans.Common.WPFApp\Jeans.Common.WPFApp.csproj", "{7B61D202-1EC0-46AE-A966-1CC7C34619EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B61D202-1EC0-46AE-A966-1CC7C34619EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B61D202-1EC0-46AE-A966-1CC7C34619EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B61D202-1EC0-46AE-A966-1CC7C34619EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B61D202-1EC0-46AE-A966-1CC7C34619EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4C5A853-75C0-447A-9CC1-E0F8530EE7A7}
+	EndGlobalSection
+EndGlobal
