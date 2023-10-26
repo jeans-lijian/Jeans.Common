@@ -23,5 +23,10 @@ namespace Jeans.Common.WPFApp.Views
         {
             InitializeComponent();
         }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

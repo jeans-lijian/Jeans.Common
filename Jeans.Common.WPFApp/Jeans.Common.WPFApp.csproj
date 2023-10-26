@@ -8,11 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Icons\closeBtn_default.png" />
+    <None Remove="Assets\Icons\closeBtn_MouseOver.png" />
+    <None Remove="Assets\Icons\img_contact.png" />
+    <None Remove="Assets\Icons\img_home.png" />
+    <None Remove="Assets\Icons\img_map.png" />
+    <None Remove="Assets\Icons\img_message.png" />
+    <None Remove="Assets\Icons\img_setting.png" />
+    <None Remove="Assets\Icons\img_signout.png" />
+    <None Remove="Assets\Icons\tgBtn_default.png" />
+    <None Remove="Assets\Icons\tgBtn_MouseOver.png" />
     <None Remove="Assets\Images\close.png" />
     <None Remove="Assets\Images\facebook.png" />
     <None Remove="Assets\Images\github.png" />
     <None Remove="Assets\Images\google.png" />
     <None Remove="Assets\Images\ic_username.png" />
+    <None Remove="Assets\Images\img_background.png" />
     <None Remove="Assets\Images\password.png" />
   </ItemGroup>
 
@@ -22,6 +33,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Icons\closeBtn_default.png" />
+    <Resource Include="Assets\Icons\closeBtn_MouseOver.png" />
+    <Resource Include="Assets\Icons\img_contact.png" />
+    <Resource Include="Assets\Icons\img_home.png" />
+    <Resource Include="Assets\Icons\img_map.png" />
+    <Resource Include="Assets\Icons\img_message.png" />
+    <Resource Include="Assets\Icons\img_setting.png" />
+    <Resource Include="Assets\Icons\img_signout.png" />
+    <Resource Include="Assets\Icons\tgBtn_default.png" />
+    <Resource Include="Assets\Icons\tgBtn_MouseOver.png" />
     <Resource Include="Assets\Images\close.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -29,6 +50,7 @@
     <Resource Include="Assets\Images\github.png" />
     <Resource Include="Assets\Images\google.png" />
     <Resource Include="Assets\Images\ic_username.png" />
+    <Resource Include="Assets\Images\img_background.png" />
     <Resource Include="Assets\Images\password.png" />
   </ItemGroup>
 

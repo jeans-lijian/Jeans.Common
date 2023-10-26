@@ -6,16 +6,73 @@
         xmlns:local="clr-namespace:Jeans.Common.WPFApp.Views"
         Title="LeftMenuView"
         Width="800"
-        Height="450"
+        Height="600"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Topmost="True"
         mc:Ignorable="d">
 
     <!-- https://github.com/cooder-cheng/Navigation-Drawer-Sidebar-Menu-in-WPF/tree/master/Source -->
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="121*" />
-            <ColumnDefinition Width="679*" />
-        </Grid.ColumnDefinitions>
+    <Window.Resources>
+
+        <!--<ImageBrush x:Key="btnCloseMouseOverStyle" ImageSource="/Assets/Icons/closeBtn_MouseOver.png" />-->
+
+        <Style x:Key="btnCloseStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="button"
+                                BorderThickness="0"
+                                Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True">
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <!--<Setter TargetName="button" Property="Background" Value="{StaticResource btnCloseMouseOverStyle}" />-->
+                                <Setter TargetName="button" Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="/Assets/Icons/closeBtn_MouseOver.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="Black">
+
+        <!-- 背景图片 -->
+        <Grid x:Name="BG">
+            <Grid.Background>
+                <ImageBrush x:Name="img_bg"
+                            ImageSource="/Assets/Images/img_background.png"
+                            Stretch="Fill" />
+            </Grid.Background>
+        </Grid>
+
+        <!-- 退出按钮 -->
+        <Canvas>
+            <Button x:Name="btnClose"
+                    Canvas.Left="740"
+                    Canvas.Top="20"
+                    Width="40"
+                    Height="40"
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    Style="{StaticResource btnCloseStyle}"
+                    Click="btnClose_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Assets/Icons/closeBtn_default.png" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+        </Canvas>
 
     </Grid>
 </Window>
