@@ -10,6 +10,7 @@
   <ItemGroup>
     <None Remove="Assets\Icons\closeBtn_default.png" />
     <None Remove="Assets\Icons\closeBtn_MouseOver.png" />
+    <None Remove="Assets\Icons\iconfont.ttf" />
     <None Remove="Assets\Icons\img_contact.png" />
     <None Remove="Assets\Icons\img_home.png" />
     <None Remove="Assets\Icons\img_map.png" />
@@ -29,12 +30,12 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Assets\Icons\closeBtn_default.png" />
     <Resource Include="Assets\Icons\closeBtn_MouseOver.png" />
+    <Resource Include="Assets\Icons\iconfont.ttf" />
     <Resource Include="Assets\Icons\img_contact.png" />
     <Resource Include="Assets\Icons\img_home.png" />
     <Resource Include="Assets\Icons\img_map.png" />

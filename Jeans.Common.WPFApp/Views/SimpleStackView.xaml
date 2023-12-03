@@ -192,7 +192,7 @@
                 Content="Browse" />
     </Grid>-->
 
-    <Grid>
+    <!--<Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
@@ -227,6 +227,47 @@
                  TextWrapping="WrapWithOverflow"
                  Text="This is a test that demonstrates how buttons adapt themselves to fit the context they contain when they aren't explicitly sized.                   This behavior makes localization much easier." />
 
-    </Grid>
+    </Grid>-->
 
+    <StackPanel>
+        <Label Content="Choose _A" Target="{Binding ElementName=txtA}" />
+        <TextBox x:Name="txtA" />
+        <Label Content="Choose _B" Target="{Binding ElementName=txtB}" />
+        <TextBox x:Name="txtB" />
+        <RadioButton Content="Group 1" />
+        <RadioButton Content="Group 2" />
+        <StackPanel>
+            <RadioButton Content="Group 3" />
+        </StackPanel>
+        <Button Content="Button" />
+        <TextBlock TextWrapping="Wrap">
+            You can use a Popup to provide a link for a specific<Run TextDecorations="Underline">term</Run>
+            of interest.</TextBlock>
+        <ScrollViewer>
+            <TabControl Margin="5">
+                <TabItem Header="Tab One">
+                    <StackPanel>
+                        <CheckBox Margin="3" Content="Setting One" />
+                    </StackPanel>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <TextBlock>Tab Two</TextBlock>
+                    </TabItem.Header>
+                    <StackPanel>
+                        <CheckBox Margin="3" Content="Setting Two" />
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </ScrollViewer>
+
+        <Expander Margin="5"
+                  Padding="5"
+                  Header="Region One"
+                  BorderThickness="1"
+                  BorderBrush="Black">
+            <Button Padding="3" Content="Hidden Button One" />
+        </Expander>
+
+    </StackPanel>
 </Window>

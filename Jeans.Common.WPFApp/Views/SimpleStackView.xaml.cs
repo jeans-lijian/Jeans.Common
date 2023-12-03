@@ -29,16 +29,16 @@ namespace Jeans.Common.WPFApp.Views
 
         }
 
-        private void chkLongText_Checked(object sender, RoutedEventArgs e)
-        {
-            btnPrev.Content = "<- Go to the Previous Window";
-            btnNext.Content = "Go to the Next Window ->";
-        }
+        //private void chkLongText_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    btnPrev.Content = "<- Go to the Previous Window";
+        //    btnNext.Content = "Go to the Next Window ->";
+        //}
 
-        private void chkLongText_Unchecked(object sender, RoutedEventArgs e)
-        {
-            btnPrev.Content = "Prev";
-            btnNext.Content = "Next";
-        }
+        //private void chkLongText_Unchecked(object sender, RoutedEventArgs e)
+        //{
+        //    btnPrev.Content = "Prev";
+        //    btnNext.Content = "Next";
+        //}
     }
 }
