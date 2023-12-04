@@ -29,10 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Assets\Icons\closeBtn_default.png" />
     <Resource Include="Assets\Icons\closeBtn_MouseOver.png" />
     <Resource Include="Assets\Icons\iconfont.ttf" />

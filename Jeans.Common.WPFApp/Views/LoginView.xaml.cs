@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jeans.Common.WPFApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,11 +23,20 @@ namespace Jeans.Common.WPFApp.Views
         public LoginView()
         {
             InitializeComponent();
+            DataContext = new LoginViewModel();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void winMove_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
         }
     }
 }
