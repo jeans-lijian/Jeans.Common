@@ -18,12 +18,12 @@ namespace Jeans.Common.WPFApp
         {
             base.OnStartup(e);
 
-            //if (new LoginView().ShowDialog() == true)
-            //{
-            //    new MainView().ShowDialog();
-            //}
+            if (new LoginView().ShowDialog() == true)
+            {
+                new MainView().ShowDialog();
+            }
 
-            //Application.Current.Shutdown();
+            Application.Current.Shutdown();
         }
     }
 }

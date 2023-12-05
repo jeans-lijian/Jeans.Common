@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Jeans.Common.WPFApp.Views"
         xmlns:common="clr-namespace:Jeans.Common.WPFApp.Commons"
+        x:Name="loginWindow"
         Title="登录"
         Width="360"
         Height="600"
@@ -217,7 +218,8 @@
                         Foreground="White"
                         Cursor="Hand"
                         Template="{StaticResource LoginButtonTemplate}"
-                        Command="{Binding LoginCommand}" />
+                        Command="{Binding LoginCommand}"
+                        CommandParameter="{Binding ElementName=loginWindow}" />
                 <TextBlock Grid.Row="4"
                            HorizontalAlignment="Center"
                            Text="{Binding ErrorMessage}"

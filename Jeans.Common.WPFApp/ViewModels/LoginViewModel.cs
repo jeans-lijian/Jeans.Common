@@ -17,7 +17,7 @@ namespace Jeans.Common.WPFApp.ViewModels
                 RaiseCanExecuteChanged = new Func<object, bool>(LoginStatus)
             };
 
-            ShowProgress= Visibility.Collapsed;
+            ShowProgress = Visibility.Collapsed;
         }
 
         private Visibility _showProgress;
@@ -61,7 +61,7 @@ namespace Jeans.Common.WPFApp.ViewModels
         private void Login(object o)
         {
             ErrorMessage = string.Empty;
-            ShowProgress=Visibility.Visible;
+            ShowProgress = Visibility.Visible;
 
             if (string.IsNullOrWhiteSpace(LoginModel.UserName))
             {
@@ -85,6 +85,8 @@ namespace Jeans.Common.WPFApp.ViewModels
             }
 
             ErrorMessage = $"登录成功,UserName={LoginModel.UserName},Password={LoginModel.PassWord},VerifyCode={LoginModel.VerifyCode}";
+
+            (o as Window).DialogResult = true;
         }
 
         private bool LoginStatus(object o)
