@@ -4,12 +4,187 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Jeans.Common.WPFApp.Views"
-        Title="MainView"
-        Width="800"
-        Height="450"
+        Title="首页界面"
+        Width="1280"
+        Height="860"
         WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
         mc:Ignorable="d">
-    <Grid>
 
-    </Grid>
+    <Window.Resources>
+        <!-- 菜单样式 -->
+        <Style x:Key="MenuStyle" TargetType="{x:Type RadioButton}">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <Border x:Name="menuBg" Background="Transparent" CornerRadius="8">
+                            <ContentControl Margin="20,4" Content="{TemplateBinding Content}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="menuBg" Property="Background" Value="#44ffffff" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SearchStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border BorderThickness="1"
+                                BorderBrush="gray"
+                                CornerRadius="8"
+                                Background="#22000000"
+                                SnapsToDevicePixels="True">
+                            <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                                <TextBlock Margin="5,0"
+                                           VerticalAlignment="Center"
+                                           FontFamily="/Assets/Icons/#iconfont"
+                                           Text="&#xe6bb;"
+                                           Foreground="White"
+                                           FontSize="20" />
+                                <TextBlock x:Name="SearchAlertInfo"
+                                           VerticalAlignment="Center"
+                                           Text="Search for what you like..."
+                                           Foreground="#44ffffff"
+                                           Visibility="Collapsed" />
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                              Width="260"
+                                              Focusable="false"
+                                              HorizontalScrollBarVisibility="Hidden"
+                                              VerticalScrollBarVisibility="Hidden"
+                                              Background="Transparent" />
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Mode=Self}}" Value="">
+                                <Setter TargetName="SearchAlertInfo" Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border CornerRadius="10" Background="White">
+        <Grid>
+            <Border x:Name="borderMove"
+                    Height="200"
+                    VerticalAlignment="Top"
+                    CornerRadius="10,10,0,0"
+                    Background="#0079FF"
+                    MouseLeftButtonDown="borderMove_MouseLeftButtonDown" />
+
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal">
+                <Button x:Name="btnMin"
+                        Width="40"
+                        Height="30"
+                        Foreground="White"
+                        FontFamily="/Assets/Icons/#iconfont"
+                        Content="&#xe646;"
+                        FontSize="20"
+                        Click="btnMin_Click" />
+                <Button x:Name="btnMax"
+                        Width="40"
+                        Height="30"
+                        Foreground="White"
+                        FontFamily="/Assets/Icons/#iconfont"
+                        Content="&#xe646;"
+                        Click="btnMax_Click" />
+                <Button x:Name="btnClose"
+                        Width="40"
+                        Height="30"
+                        Foreground="White"
+                        FontFamily="/Assets/Icons/#iconfont"
+                        Content="&#xe646;"
+                        Click="btnClose_Click" />
+            </StackPanel>
+
+            <Grid Margin="50,30,50,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="65" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Border Width="40" Height="40" CornerRadius="40">
+                        <Border.Background>
+                            <ImageBrush ImageSource="/Assets/Images/img_background.png" />
+                        </Border.Background>
+                    </Border>
+                    <StackPanel Margin="15,0,0,0">
+                        <TextBlock Text="朝夕教育课程管理平台" Foreground="White" FontSize="20" />
+                        <TextBlock Text="ZHAOXI EDU" Foreground="#88dddddd" FontSize="10" />
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal"
+                            Cursor="Hand">
+                    <Border Width="30" Height="30" CornerRadius="30">
+                        <Border.Background>
+                            <ImageBrush ImageSource="/Assets/Images/img_background.png" />
+                        </Border.Background>
+                    </Border>
+                    <TextBlock Margin="10,0,0,0"
+                               VerticalAlignment="Center"
+                               Text="Jeans"
+                               Foreground="White" />
+                </StackPanel>
+
+                <!-- 菜单 -->
+                <StackPanel Grid.Row="1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <RadioButton Content="首页"
+                                 Style="{StaticResource MenuStyle}"
+                                 IsChecked="True"
+                                 Command="{Binding NavChangeCommand}"
+                                 CommandParameter="HomeView" />
+                    <RadioButton Content="关于我们" Style="{StaticResource MenuStyle}" />
+                    <RadioButton Content="课程中心"
+                                 Style="{StaticResource MenuStyle}"
+                                 Command="{Binding NavChangeCommand}"
+                                 CommandParameter="CourseCenterView" />
+                    <RadioButton Content="诚聘英才" Style="{StaticResource MenuStyle}" />
+                    <RadioButton Content="个人中心" Style="{StaticResource MenuStyle}" />
+                </StackPanel>
+
+                <!-- 搜索框 -->
+                <TextBox Grid.Row="1"
+                         VerticalContentAlignment="Center"
+                         Foreground="White"
+                         Style="{StaticResource SearchStyle}"
+                         Text="{Binding SearchText}" />
+
+                <!-- 内容 -->
+                <ContentControl Grid.Row="2" Content="{Binding MainContent}" />
+            </Grid>
+        </Grid>
+    </Border>
+
 </Window>

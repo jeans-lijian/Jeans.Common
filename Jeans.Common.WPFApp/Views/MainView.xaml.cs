@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Jeans.Common.WPFApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,6 +24,40 @@ namespace Jeans.Common.WPFApp.Views
         public MainView()
         {
             InitializeComponent();
+
+            this.MaxHeight = SystemParameters.WorkArea.Height;
+
+            DataContext=new MainViewModel();
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void btnMax_Click(object sender, RoutedEventArgs e)
+        {
+            if (WindowState == WindowState.Maximized)
+            {
+                WindowState = WindowState.Normal;
+            }
+            else
+            {
+                WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void btnMin_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void borderMove_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
     }
 }
